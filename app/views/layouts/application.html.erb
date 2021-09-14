@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VaccinePassport</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if user_signed_in? %>
+      <%= current_user.name%>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <% elsif medical_user_signed_in? %>
+    <%= current_medical_user.name%>
+      <%= link_to 'ログアウト', destroy_medical_user_session_path, method: :delete %>
+    <% else %>
+      <h2>利用者</h2>
+      <%= link_to 'ログイン', new_user_session_path %>
+      <%= link_to '新規登録', new_user_registration_path %>
+
+      <h2>医療関係者</h2>
+      <%= link_to 'ログイン', new_medical_user_session_path %>
+      <%= link_to '新規登録', new_medical_user_registration_path %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

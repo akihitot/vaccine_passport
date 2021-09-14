@@ -1,0 +1,2 @@
+module VaccinationLogsHelper
+end
