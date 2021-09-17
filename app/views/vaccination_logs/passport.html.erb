@@ -1,0 +1,12 @@
+<div class="contents row">
+    <% @vaccination_logs.each do |vaccination_log| %>
+      <% if vaccination_log.my_number == current_user.my_number %>
+        <div>回数:<%= vaccination_log.vaccination_times %>回目</div>
+        <div>マイナンバー:<%= vaccination_log.my_number %></div>
+        <div>メーカー:<%= vaccination_log.manufacturer %></div>
+        <div>製造番号:<%= vaccination_log.lot_number %></div>
+        <div>接種日:<%= vaccination_log.vaccination_date %></div>
+      <% end %>
+    <% end %>
+  </div>
+  <%= link_to '戻る', root_path %>

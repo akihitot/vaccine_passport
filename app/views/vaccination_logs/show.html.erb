@@ -1,0 +1,12 @@
+<% if medical_user_signed_in? && current_medical_user.id == @vaccination_log.medical_user_id %> 
+  <div class="vaccination_log__manage">
+    <%= link_to "編集する", edit_vaccination_log_path(@vaccination_log.id), method: :get, class: :vaccination_log__btn %>
+    <%= link_to "削除する", vaccination_log_path(@vaccination_log.id), method: :delete, class: :vaccination_log__btn %>
+    <%= link_to '戻る', root_path %>
+  </div>
+<div>回数:<%= @vaccination_log.vaccination_times %>回目</div>
+<div>マイナンバー:<%= @vaccination_log.my_number %></div>
+<div>メーカー:<%= @vaccination_log.manufacturer %></div>
+<div>製造番号:<%= @vaccination_log.lot_number %></div>
+<div>接種日:<%= @vaccination_log.vaccination_date %></div>
+<% end %> 

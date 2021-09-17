@@ -1,0 +1,10 @@
+<%= link_to '接種実績一覧', vaccination_logs_index_log_path %>
+<%= form_with(url: search_vaccination_logs_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
+  <%= form.submit "検索", class: "search-btn" %>
+<% end %>
+<div class="contents row">
+  <% @vaccination_logs.each do |vaccination_log| %>
+    <%= render partial: "vaccination_log", locals: { vaccination_log: vaccination_log } %>
+  <% end %>
+</div>

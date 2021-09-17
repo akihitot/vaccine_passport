@@ -1,0 +1,4 @@
+<div><%= link_to "マイナンバー:#{vaccination_log.my_number} ", vaccination_log_path(vaccination_log.id), method: :get %>
+     <%= link_to "接種日:#{vaccination_log.vaccination_date}" , vaccination_log_path(vaccination_log.id), method: :get %>
+     by <%= vaccination_log.medical_user.name %>
+</div>

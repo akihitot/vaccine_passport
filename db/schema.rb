@@ -43,10 +43,13 @@ ActiveRecord::Schema.define(version: 2021_09_12_233323) do
     t.integer "my_number", null: false
     t.string "manufacturer", null: false
     t.integer "lot_number", null: false
-    t.datetime "vaccination_date", null: false
+    t.date "vaccination_date", null: false
     t.integer "vaccination_times", null: false
+    t.bigint "medical_user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["medical_user_id"], name: "index_vaccination_logs_on_medical_user_id"
   end
 
+  add_foreign_key "vaccination_logs", "medical_users"
 end

@@ -3,5 +3,5 @@ class MedicalUser < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :vaccination_log
+  has_many :vaccination_logs
 end
