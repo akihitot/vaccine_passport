@@ -15,7 +15,7 @@ class VaccinationLogsController < ApplicationController
   end
 
   def passport
-    @vaccination_logs = VaccinationLog.includes(:medical_user).order("created_at DESC")
+    @vaccination_logs = VaccinationLog.includes(:medical_user)
   end
 
   def search
