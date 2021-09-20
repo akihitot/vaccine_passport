@@ -1,13 +1,16 @@
-<% if user_signed_in? %>
-  <div><%= current_user.name%></div>
-  <%= link_to 'ワクチンパスポート表示', vaccination_logs_passport_path %>
-<% elsif medical_user_signed_in? %>
-  <div><%= current_medical_user.name%></div>
-  <div><%= link_to '接種実績登録', new_vaccination_log_path %></div>
-  <div><%= link_to '接種実績一覧', vaccination_logs_index_log_path %></div>
-<% else %>
-  <div><%= @today %></div>
-  <div>本日の接種人数：<%= @today_vaccination %>人</div>
-  <div>1回目：<%= @first_vaccination %>人</div>
-  <div>2回目：<%= @second_vaccination %>人</div>
-<% end %>
+<div class="container">
+  <div class="row justify-content-md-center pt-5">
+    <div class="col-md-auto">
+      <div>本日の接種人数</div>
+      <div><%= @today_vaccination %>人</div>
+    </div>
+    <div class="col-md-auto">
+      <div>1回目</div>
+      <div><%= @first_vaccination %>人</div>
+    </div>
+    <div class="col-md-auto">
+      <div>2回目</div>
+      <div><%= @second_vaccination %>人</div>
+    </div>
+  </div>
+</div>

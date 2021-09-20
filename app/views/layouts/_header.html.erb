@@ -1,0 +1,42 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border border-5 rounded">
+        <a class="navbar-brand" href="/">ワクチンポータル</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto align-items-center">
+                <% if user_signed_in? %>
+                    <div class="col-md-auto "><%= current_user.name%>様</div>
+                    <li class="nav-item active">
+                      <%= link_to 'ワクチンパスポート表示', vaccination_logs_passport_path, class: "nav-link text-dark" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "ログアウト", destroy_user_session_path, class: "nav-link text-dark", method: :delete %>
+                    </li>
+                <% elsif medical_user_signed_in? %>
+                    <div class="col-md-auto "><%= current_medical_user.name%>様</div>
+                    <li class="nav-item">
+                        <%= link_to "ログアウト", destroy_medical_user_session_path, class: "nav-link text-dark", method: :delete %>
+                    </li>
+                    <li class="nav-item">
+                      <%= link_to '接種実績登録', new_vaccination_log_path, class: "nav-link text-dark" %>
+                    </li>
+                    <li class="nav-item">
+                      <%= link_to '接種実績一覧', vaccination_logs_index_log_path, class: "nav-link text-dark" %>
+                    </li>
+                <% else %>
+                    <li class="nav-item">
+                        <%= link_to "利用者登録", new_user_registration_path, class: "nav-link text-dark" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "利用者ログイン", new_user_session_path, class: "nav-link text-dark" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "医療関係者登録", new_medical_user_registration_path, class: "nav-link text-dark" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "医療関係者ログイン", new_medical_user_session_path, class: "nav-link text-dark" %>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    </nav>
+</header>

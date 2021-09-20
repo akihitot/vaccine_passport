@@ -1,8 +1,27 @@
-<div>
-    <%= link_to vaccination_log.vaccination_date , vaccination_log_path(vaccination_log.id), method: :get %>
-    <%= "マイナンバー:#{vaccination_log.my_number} "%>
-    <%= "メーカー:#{vaccination_log.manufacturer}" %>
-    <%= "ロット番号:#{vaccination_log.lot_number}" %>
-    <%= "接種回数:#{vaccination_log.vaccination_times}" %>
-    by <%= vaccination_log.medical_user.name %>
-</div>
+<div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <div><%= link_to vaccination_log.vaccination_date , vaccination_log_path(vaccination_log.id), method: :get %></div>
+      </div>
+      <div class="col-md-auto">
+        <div>マイナンバー</div>
+        <div><%= vaccination_log.my_number %></div>
+      </div>
+      <div class="col-md-auto">
+        <div>メーカー</div>
+        <div><%= vaccination_log.manufacturer %></div>
+      </div>
+      <div class="col-md-auto">
+        <div>ロット番号</div>
+        <div><%= vaccination_log.lot_number %></div>
+      </div>
+      <div class="col-md-auto">
+        <div>接種回数</div>
+        <div><%= vaccination_log.vaccination_times %></div>
+      </div>
+      <div class="col-md-auto">
+        <div>登録者</div>
+        <div><%= vaccination_log.medical_user.name %></div>
+      </div>
+    </div>
+  </div>
