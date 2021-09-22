@@ -16,6 +16,7 @@ class VaccinationLogsController < ApplicationController
 
   def passport
     @vaccination_logs = VaccinationLog.includes(:medical_user)
+    @today = Date.current
   end
 
   def search

@@ -1,3 +1,4 @@
+<div class="row justify-content-md-center pt-5">新型コロナウイルス感染症 予防接種証明証</div>
 <% @vaccination_logs.each do |vaccination_log| %>
   <% if vaccination_log.my_number == current_user.my_number %>
     <div class="container">
@@ -26,3 +27,4 @@
     </div>
   <% end %>
 <% end %>
+<div class="row justify-content-md-center pt-5"><%= "証明書発行年月日#{@today}" %></div>
