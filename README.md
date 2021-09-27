@@ -2,7 +2,7 @@
 VACCINE_PASSPORT
 
 # 概要
-ワクチンの接種証明を取得するアプリです。
+ワクチンの接種証明証を取得するアプリです。
 
 # 本番環境
 * https://vaccine-passport-36597.herokuapp.com
